@@ -109,7 +109,4 @@ export default {
     .rounded {
         border-radius: 1rem;
     }
-    header {
-
-    }
 </style>

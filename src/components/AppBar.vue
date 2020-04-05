@@ -20,203 +20,12 @@
                 router :to="nav_item.route"
                 class="ml-1"
                 text
-                >   
+                >  
                     <span>{{ nav_item.title }}</span>
                 </v-btn>
-
-                <v-dialog v-model="dialog_sig" persistent max-width="500px">
-                    <template v-slot:activator="{ on }">
-                        <v-btn
-                        v-on="on"
-                        outlined
-                        rounded
-                        class="ml-4"
-                        >
-                            <span>Sign-Up</span>
-                        </v-btn>
-                    </template>
-
-                    <v-card
-                        class="mx-auto"
-                    >
-                        <v-card-title>
-                            <span class="headline primary--text darken-1">Sign-Up</span>
-                            <v-spacer></v-spacer>
-                            <v-btn 
-                            icon
-                            @click="dialog_sig = !dialog_sig">
-                                <v-icon>mdi-close</v-icon>
-                            </v-btn>
-                        </v-card-title>
-
-                        <v-card-text>
-                            <v-container>
-                                <v-form
-                                    ref="form"
-                                    v-model="valid"
-                                    lazy-validation
-                                >
-                                    <v-row>
-                                        <v-col cols="12" md="12" sm="6">
-                                            <v-text-field
-                                            required
-                                            outlined
-                                            v-model="fname"
-                                            type="text"
-                                            label="First Name"
-                                            :rules="nameRules"
-                                            placeholder="Someone"
-                                            ></v-text-field>
-                                        </v-col>
-                                    </v-row>
-
-                                    <v-row>
-                                        <v-col cols="12" md="12" sm="6">
-                                            <v-text-field
-                                            required
-                                            outlined
-                                            v-model="lname"
-                                            type="text"
-                                            label="Last Name"
-                                            :rules="nameRules"
-                                            placeholder="Someone"
-                                            ></v-text-field>
-                                        </v-col>
-                                    </v-row>
-
-                                    <v-row>
-                                        <v-col cols="12" md="12" sm="6">
-                                            <v-text-field
-                                            required
-                                            outlined
-                                            v-model="email_sig"
-                                            type="email"
-                                            label="E-mail"
-                                            :rules="nameRules"
-                                            placeholder="Someone"
-                                            ></v-text-field>
-                                        </v-col>
-                                    </v-row>
-
-                                    <v-row>
-                                        <v-col cols="12" md="12" sm="6">
-                                            <v-text-field
-                                            required
-                                            outlined
-                                            v-model="pass_sig"
-                                            type="password"
-                                            label="Password"
-                                            placeholder="Create Password"
-                                            :rules="passRules"
-                                            ></v-text-field>
-                                        </v-col>
-                                    </v-row>
-                                </v-form>
-                            </v-container>
-                        </v-card-text>
-
-                        <v-card-actions>
-                            <v-btn
-                            outlined
-                            color="primary"
-                            @click="reset_sig"
-                            >Reset</v-btn>
-                            <v-spacer></v-spacer>
-
-                            <v-btn
-                            color="blue"
-                            dark
-                            outlined
-                            @click="test_sig"
-                            >
-                            <span>Sign-Up</span>
-                            </v-btn>
-                        </v-card-actions>
-                    </v-card>
-                </v-dialog>
-
-                <v-dialog v-model="dialog_log" persistent max-width="500px">
-                    <template v-slot:activator="{ on }">
-                        <v-btn
-                        v-on="on"
-                        outlined
-                        rounded
-                        class="ml-4"
-                        >
-                            <span>Login</span>
-                        </v-btn>
-                    </template>
-
-                    <v-card
-                        class="mx-auto"
-                    >
-                        <v-card-title>
-                            <span class="headline primary--text text--darken-1">Login</span>
-                            <v-spacer></v-spacer>
-                            <v-btn 
-                            icon
-                            @click="dialog_log = !dialog_log">
-                                <v-icon>mdi-close</v-icon>
-                            </v-btn>
-                        </v-card-title>
-
-                        <v-card-text>
-                            <v-container>
-                                <v-form
-                                    ref="form"
-                                    v-model="valid"
-                                    lazy-validation
-                                >
-                                    <v-row>
-                                        <v-col cols="12" md="12" sm="6">
-                                            <v-text-field
-                                            required
-                                            outlined
-                                            v-model="email"
-                                            type="email"
-                                            label="E-mail"
-                                            :rules="emailRules"
-                                            placeholder="someone@gmail.com"
-                                            ></v-text-field>
-                                        </v-col>
-                                    </v-row>
-
-                                    <v-row>
-                                        <v-col cols="12" md="12" sm="6">
-                                            <v-text-field
-                                            required
-                                            outlined
-                                            v-model="pass"
-                                            type="password"
-                                            label="Password"
-                                            :rules="passRules"
-                                            ></v-text-field>
-                                        </v-col>
-                                    </v-row>
-                                </v-form>
-                            </v-container>
-                        </v-card-text>
-
-                        <v-card-actions>
-                            <v-btn
-                            outlined
-                            color="primary"
-                            @click="reset"
-                            >Reset</v-btn>
-                            <v-spacer></v-spacer>
-
-                            <v-btn
-                            color="blue"
-                            dark
-                            outlined
-                            @click="test"
-                            >
-                            <span>Login</span>
-                            </v-btn>
-                        </v-card-actions>
-                    </v-card>
-                </v-dialog>
-            </div>          
+            </div> 
+            <app-login />
+            <app-signup />        
         </v-app-bar>
 
        <v-navigation-drawer
@@ -225,6 +34,40 @@
             absolute
             temporary
         >
+
+            <v-list
+             dense
+             nav
+             class="py-0"
+            >
+                <v-list-item>
+                    <v-list-item-avatar id="tit">
+                        <img src="https://dcassetcdn.com/design_img/1559024/551167/551167_7840631_1559024_911ff84c_image.png" alt="logo">
+                    </v-list-item-avatar>
+
+                    <v-list-item-content dark>
+                        <v-list-item-title class="white--text fonz">Jam<span class="font-weight-thin">Sly</span></v-list-item-title>
+                        <v-list-item-subtitle class="white--text">Entertainment</v-list-item-subtitle>
+                    </v-list-item-content>
+                </v-list-item>
+
+                <v-divider color="white"></v-divider>
+
+                <v-list-item
+                 v-for="link in links"
+                 :key="link.title"
+                 router :to="link.route"
+                 link
+                >
+                    <v-list-item-icon>
+                        <v-icon dark>{{ link.icon }}</v-icon>
+                    </v-list-item-icon>
+
+                    <v-list-item-content>
+                        <v-list-item-title class="white--text">{{ link.title }}</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+            </v-list>
            
         </v-navigation-drawer>
     </div>
@@ -232,73 +75,55 @@
 
 
 <script>
+import Login from '../components/core/Login';
+import SignUp from '../components/core/Signup';
 
 
 export default {
     // components: { Login },
+    components: {
+        'app-login': Login,
+        'app-signup': SignUp
+    },
 
     data: () => ({
-        drawer: null,
-        dialog_log: false,
-        dialog_sig: false,
-        color: 'blue-grey darken-3',
+        drawer: false,
+        color: 'blue-grey darken-4',
         alert: false,
         valid: true,
-        fname: '',
-        lname: '',
-        email: '',
-        email_sig: '',
-        pass: '',
-        pass_sig: '',
         nav_items: [
             { title: 'Home', route: '/' },
             { title: 'Music', route: '/musics' },
             { title: 'Videos', route: '/videos' },
             { title: 'Events', route: '/events' },
-            { title: 'Blog', route: '#' },
+            { title: 'Blog', route: '/blogposts' },
         ],
     
-        emailRules: [
-            v => !!v || 'E-mail is required',
-            v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
-        ],
 
-        passRules: [
 
+
+        links: [
+            {title: "Home", icon: "mdi-home", route: '/'},
+            {title: "Musics", icon: "mdi-music-box", route: '/musics'},
+            {title: "Videos", icon: "mdi-library-video", route: '/videos'},
+            {title: "Events", icon: "mdi-calendar-star", route: '/events'},
+            {title: "Blog", icon: "mdi-blogger", route: '/blogposts'},
         ],
     }),
 
     methods: {
-        validate () {
-            if (this.$refs.form.validate()) {
-                this.alert = true;
-            }
-        },
 
-        reset () {
-            this.email = '';
-            this.pass = '';
-        },
-
-        reset_sig () {
-            this.email_sig = '';
-            this.fname = '';
-            this.lname = '';
-            this.pass_sig = '';
-        },
-
-        test () {
-            console.log(this.email);
-            console.log(this.pass);
-        },
-
-        test_sig () {
-            console.log(this.fname);
-            console.log(this.lname);
-            console.log(this.email_sig);
-            console.log(this.pass_sig);
-            
-        },
     },
 }
 </script>
+
+
+<style scoped>
+    #tit {
+        color: transparent;
+    }
+
+    .fonz {
+        font-size: 40px;
+    }
+</style>

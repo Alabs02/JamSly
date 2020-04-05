@@ -4,7 +4,7 @@ import Home from '../views/Home.vue'
 import Videos from '../views/Video.vue'
 import Musics from '../views/Music.vue'
 import Events from '../views/Event.vue'
-import About from '../views/About.vue'
+import BlogPost from '../views/BlogPost.vue'
 
 Vue.use(VueRouter)
 
@@ -34,9 +34,9 @@ const routes = [
   },
 
   {
-    path: '/about',
-    name: 'about',
-    component: About
+    path: '/blogposts',
+    name: 'Blog',
+    component: BlogPost
   },
 
 

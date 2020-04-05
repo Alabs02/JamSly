@@ -33,11 +33,11 @@
     data: () => ({
       links: [
         'Home',
-        'About',
-        'Team',
+        'Musics',
+        'Videos',
         'Events',
         'Blog',
-        'Contact Us',
+        'About'
       ],
     }),
   }

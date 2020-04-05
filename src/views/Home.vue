@@ -77,7 +77,7 @@
             <v-card-title class="title ml-12 primary--text">Trending</v-card-title>
                 <v-container fluid>
                   <v-img
-                    src="../assets/2.jpg"
+                    src="https://netstorage-legit.akamaized.net/images/25656ed882de3aa3.jpg"
                     class="white--text align-end"
                     gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
                   >
@@ -124,13 +124,14 @@
       <v-container fluid>
         <v-card
         class="mx-auto"
-        max-width="1070"
+        max-width="1000"
         >
-          <v-flex>
-            <musicpart />
-          </v-flex>
         </v-card>
       </v-container>
+
+      <music-section></music-section>
+
+
     </v-content>  
   </div>
 </template>
@@ -138,6 +139,7 @@
 <script>
 // @ is an alias to /src
 import AppBar from '../components/AppBar';
+import MusicSection from '../components/MusicSection';
 
 
 
@@ -145,6 +147,7 @@ export default {
   name: 'home',
   components: {   
     'app-bar': AppBar,
+    'music-section': MusicSection,
   },
 
   data: () => ({
@@ -156,7 +159,7 @@ export default {
     ],
 
     t_cards: [
-      { title: "Halcoy", sub: "Funny Tales", src: '' },
+      { title: "Hello", sub: "Funny Tales", src: '' },
       { title: "Halcoy", sub: "Funny Tales", src: "" },
       { title: "Halcoy", sub: "Funny Tales", src: "", },
       { title: "Halcoy", sub: "Funny Tales", src: "", },

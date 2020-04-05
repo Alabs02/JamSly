@@ -100,7 +100,7 @@
 
                     <v-col
                      cols="12"
-                     md="5"
+                     md="6"
                     >
                       <v-card
                        class="mx-auto"
@@ -147,10 +147,7 @@
                             </v-flex>
                         </v-layout>
                         <v-card-text>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus labore perspiciatis 
-                            natus voluptas 
-                            magnam sequi iure officiis quos autem ea nesciunt, dignissimos, odio omnis unde at odit, nulla 
-                            ducimus est.
+                            {{ text.slice(0, 80) + '...' }}
                         </v-card-text>
                         <v-divider class="mx-4"></v-divider>
                         <v-card-actions>
@@ -190,14 +187,16 @@ export default {
     components: {
         'app-bar': AppBar,
     },
+
+    data: () => ({
+        text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus labore perspiciatis natus voluptas magnam sequi iure officiis quos autem ea nesciunt, dignissimos, odio omnis unde at odit, nulla ducimus est."
+    }),
 }
 </script>
 
 
 <style scoped>
-    .star {
-        border-radius: 1 rem;
-    }
+
     .font {
         font-size: 10px;
     }

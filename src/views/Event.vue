@@ -20,62 +20,51 @@
                     </v-flex>
                 </v-col>
                 </v-row>
-            </v-parallax>
-
+            </v-parallax>       
         
+             <v-banner single-line>
+                <v-icon
+                color="warning"
+                size="36"
+                >
+                mdi-account-group
+                </v-icon>
+                <span class="font-weight-bold ml-2 mt-3 blue-grey--text fam hidden-md-and-down">Create and organise new Events</span>
+
+                <template v-slot:actions>
+                <v-btn
+                    color="primary"
+                    text
+                    rounded
+                    router to="/events/new"
+                >
+                    Create new Event
+                    <v-icon right>mdi-plus</v-icon>
+                </v-btn>
+                </template>
+            </v-banner>
+
             <v-card
-                class="mx-auto mt-12"
-                elevation="6"
-                max-width="900"
+            flat
             >
-                <v-row justify="center" class="mr-5 ml-5">
-                    <v-col
-                    cols="12"
-                    sm="6"
-                    md="4"
-                    class="mt-5"
-                    >
+                <v-container>
+                    <v-row justify="center" class="mr-5 ml-5">
+                        <v-col
+                        cols="12"
+                        sm="12"
+                        md="12"
+                        class="mt-5"
+                        >
 
-                        <v-text-field
-                        label="Date"
-                        append-icon="mdi-calendar"
-                        placeholder="01/dd/yyyy"
-                        color="blue-grey"
-                        outlined
-                        ></v-text-field>
-                    </v-col>
-
-                    <v-col
-                    cols="12"
-                    sm="6"
-                    md="4"
-                    class="mt-5"
-                    >
-
-                        <v-text-field
-                        label="Location"
-                        append-icon="mdi-location-enter"
-                        placeholder="Unijos"
-                        color="blue-grey"
-                        outlined
-                        ></v-text-field>
-                    </v-col>
-
-                    <v-col
-                    cols="12"
-                    sm="6"
-                    md="4"
-                    class="mt-5"
-                    >
-
-                        <v-text-field
-                        label="Events"
-                        placeholder="Keyword"
-                        color="blue-grey"
-                        outlined
-                        ></v-text-field>
-                    </v-col>
-                </v-row>
+                            <v-text-field
+                            label="Search Events"
+                            prepend-inner-icon="mdi-database-search"
+                            color="blue-grey"
+                            outlined
+                            ></v-text-field>
+                        </v-col>
+                    </v-row>
+                </v-container>
             </v-card><br>
 
             <v-container class="text-center">
@@ -88,13 +77,17 @@
                      md="4"
                     >
                         <v-card 
-                         class="mx-auto star"
+                         class="mx-auto ml-1 mr-1"
                          flat
                         >
-                            <v-img
-                            >
-                                <img src="../assets/mathew-kane.jpg" class="star" width="100%"  height="300px" alt="">
-                            </v-img>
+                                <v-img
+                                 cover
+                                 class="resp"
+                                 src="@/assets/mathew-kane.jpg"
+                                 height="250px"
+                                 width="100%"
+                                >
+                                </v-img>
                         </v-card>
                     </v-col>
 
@@ -105,7 +98,6 @@
                       <v-card
                        class="mx-auto"
                        max-width="600"
-                       height="300"
                        id="data"
                        elevation="5"
                       >
@@ -154,20 +146,16 @@
                             <v-btn
                              text
                              color="blue-grey"
+                             router to="/event/more"
                             >
                             Read More
                             <v-icon right>mdi-chevron-right</v-icon>
                             </v-btn>
 
                             <v-spacer></v-spacer>
-
-                            <v-btn
-                             color="orange"
-                             dark
-                            >
-                                <v-icon left="">mdi-cart</v-icon>
-                                Buy Ticket
-                            </v-btn>
+                            
+                            <buy-ticket></buy-ticket>
+                            <br><br>
                         </v-card-actions>
                       </v-card>
                     </v-col>
@@ -181,11 +169,13 @@
 
 <script>
 import AppBar from '../components/AppBar';
+import BuyTicket from '../components/single/BuyTicket';
 
 
 export default {
     components: {
         'app-bar': AppBar,
+        'buy-ticket': BuyTicket,
     },
 
     data: () => ({
@@ -203,5 +193,10 @@ export default {
 
     .fonti {
         font-size: 15px;
+    }
+    .fam {
+        font-style: normal;
+        font-size: 1rem;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
 </style>

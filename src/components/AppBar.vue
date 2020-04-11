@@ -1,43 +1,15 @@
 <template>
     <div>
-        <v-app-bar
-        app
-        color="blue-grey darken-4"
-        dark
-        >
-            <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
-
-            <v-toolbar-title class="title">
-                Jam<span class="font-weight-thin">Sly</span>
-            </v-toolbar-title>
-
-            <v-spacer></v-spacer>
-
-            <div class="hidden-md-and-down">
-                <v-btn
-                v-for="(nav_item, i) in nav_items"
-                :key="i"
-                router :to="nav_item.route"
-                class="ml-1"
-                text
-                >  
-                    <span>{{ nav_item.title }}</span>
-                </v-btn>
-            </div> 
-            <app-login />
-            <app-signup />        
-        </v-app-bar>
-
-       <v-navigation-drawer
+               <v-navigation-drawer
             v-model="drawer"
             :color="color"
             absolute
             temporary
+            
         >
 
             <v-list
              dense
-             nav
              class="py-0"
             >
                 <v-list-item>
@@ -70,6 +42,34 @@
             </v-list>
            
         </v-navigation-drawer>
+        <v-app-bar
+        app
+        color="blue-grey darken-4"
+        dark
+        >
+            <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+
+            <v-toolbar-title class="title">
+                Jam<span class="font-weight-thin">Sly</span>
+            </v-toolbar-title>
+
+            <v-spacer></v-spacer>
+
+            <div class="hidden-md-and-down">
+                <v-btn
+                v-for="(nav_item, i) in nav_items"
+                :key="i"
+                router :to="nav_item.route"
+                class="ml-1"
+                text
+                >  
+                    <span>{{ nav_item.title }}</span>
+                </v-btn>
+            </div> 
+            <app-login />
+            <app-signup />        
+        </v-app-bar>
+
     </div>
 </template>
 
@@ -108,6 +108,7 @@ export default {
             {title: "Videos", icon: "mdi-library-video", route: '/videos'},
             {title: "Events", icon: "mdi-calendar-star", route: '/events'},
             {title: "Blog", icon: "mdi-blogger", route: '/blogposts'},
+            {title: "About", icon: "mdi-account-circle", route: '/about'}
         ],
     }),
 

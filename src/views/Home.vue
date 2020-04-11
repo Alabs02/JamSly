@@ -130,8 +130,6 @@
       </v-container>
 
       <music-section></music-section>
-
-
     </v-content>  
   </div>
 </template>

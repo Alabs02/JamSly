@@ -4,14 +4,43 @@
         <v-content>
             <v-container>
                 <v-container>
-                    <v-text-field
-                        class="hidden-md-and-down mx-4 blue-grey lighten-4"
-                        flat
-                        hide-details
-                        label="Search"
-                        prepend-inner-icon="mdi-database-search"
-                        solo-inverted
-                    ></v-text-field>
+                    <v-row
+                     justify="center"
+                    >
+                        <v-col 
+                         cols="12"
+                         md="8"
+                         lg="8"
+                         sm="12"
+                        >
+                            <v-text-field
+                                class="mx-4 blue-grey lighten-4"
+                                flat
+                                hide-details
+                                label="Search"
+                                prepend-inner-icon="mdi-database-search"
+                                solo-inverted
+                            ></v-text-field>
+                        </v-col>
+
+                        <v-col
+                         cols="12"
+                         md="4"
+                         lg="4"
+                         sm="12"
+                         class="text-center"
+                        >
+                            <v-btn
+                             color="blue"
+                             outlined
+                             large
+                             router to="/musics/upload"
+                            >
+                                Upload musics
+                                <v-icon right>mdi-plus</v-icon>
+                            </v-btn>
+                        </v-col>
+                    </v-row>
                 </v-container>
                 <v-flex class="mt-5">
                     <v-icon class="blue-grey--text">mdi-cloud-upload</v-icon>
@@ -48,6 +77,7 @@
                                 rounded
                                 color="blue-grey darken-3"
                                 text
+                                router to="/download/music"
                                 >
                                     <v-icon left>mdi-cloud-download</v-icon>
                                     Download

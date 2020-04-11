@@ -13,22 +13,49 @@
              max-width="1000"
              elevation="5"
             >
-                <v-toolbar
-                 class=""
-                >
-                    <v-text-field
-                        class="mx-4 blue-grey lighten-4 hidden-md-and-down"
-                        flat
-                        hide-details
-                        label="Search"
-                        prepend-inner-icon="mdi-database-search"
-                        solo-inverted
-                    ></v-text-field>
-                </v-toolbar>
+                <v-container>
+                    <v-row
+                    justify="center"
+                    >
+                        <v-col 
+                        cols="12"
+                        md="8"
+                        lg="8"
+                        sm="12"
+                        >
+                            <v-text-field
+                                class="mx-4 blue-grey lighten-4"
+                                flat
+                                hide-details
+                                label="Search"
+                                prepend-inner-icon="mdi-database-search"
+                                solo-inverted
+                            ></v-text-field>
+                        </v-col>
 
+                        <v-col
+                        cols="12"
+                        md="4"
+                        lg="4"
+                        sm="12"
+                        class="text-center"
+                        >
+                            <v-btn
+                            color="blue"
+                            outlined
+                            large
+                            router to="/videos/upload"
+                            >
+                                Upload videos
+                                <v-icon right>mdi-plus</v-icon>
+                            </v-btn>
+                        </v-col>
+                    </v-row>
+                </v-container>
+                <v-divider></v-divider>
                 <v-row
                  justify="center"
-                 class="ml-3 mr-3"
+                 class="ml-3 mr-3 mt-3"
                 >
                     <v-col 
                      v-for="n in 12"
@@ -55,6 +82,7 @@
                                 <v-btn
                                  outlined
                                  color="blue darken-3"
+                                 router to="/download/video"
                                 >
                                     proceed
                                 </v-btn>
@@ -79,10 +107,9 @@
                             </v-card-actions>
                         </v-card>
                     </v-col>
-                </v-row>
-      
+                </v-row><br>
             </v-card>
-        </v-content>
+        </v-content><br>
     </div>
 </template>
 
